@@ -33,12 +33,18 @@ $statement->closeCursor();
         <tr>
             <td><?php echo htmlspecialchars($category['categoryName']); ?></td>
             <td>
-                <form action="delete_category.php" method="post">
-                    <input type="hidden" name="category_id"
-                           value="<?php echo $category['categoryID']; ?>">
-                    <input type="submit" value="Delete">
-                </form>
-            </td>
+    <form action="update_category_form.php" method="post" style="display:inline;">
+        <input type="hidden" name="category_id"
+               value="<?php echo $category['categoryID']; ?>">
+        <input type="submit" value="Update">
+    </form>
+
+    <form action="delete_category.php" method="post" style="display:inline;">
+        <input type="hidden" name="category_id"
+               value="<?php echo $category['categoryID']; ?>">
+        <input type="submit" value="Delete">
+    </form>
+</td>
         </tr>
         <?php endforeach; ?>
     
